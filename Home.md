@@ -70,7 +70,7 @@ DroidPlugin侧重于加载第三方独立插件，比如微信，并且插件不
 
 # VirtualAPK的工作过程
 VirtualAPK对插件没有额外的约束，原生的apk即可作为插件。插件工程编译生成apk后，即可通过宿主App加载，每个插件apk被加载后，都会在宿主中创建一个单独的LoadedPlugin对象。如下图所示，通过这些LoadedPlugin对象，VirtualAPK就可以管理插件并赋予插件新的意义，使其可以像手机中安装过的App一样运行。
-![VirtualAPK](http://img.my.csdn.net/uploads/201706/11/1497178485_3358.png)
+![VirtualAPK](https://github.com/didi/VirtualAPK/blob/master/imgs/va1.png)
 
 ### 如何使用
 第一步： 初始化插件引擎
@@ -132,4 +132,4 @@ protected void onCreate(Bundle savedInstanceState) {
 
 如下是VirtualAPK的整体架构图，更详细的内容请大家阅读源码。
 
-![VirtualAPK](http://img.my.csdn.net/uploads/201706/11/1497179123_9847.jpg)
+![VirtualAPK](https://github.com/didi/VirtualAPK/blob/master/imgs/va.png)
