@@ -1,7 +1,9 @@
 在这之前，请确保Gradle和adb命令都在环境变量中。
 
 构建环境建议：
+
 Gradle                   2.14.1
+
 com.android.tools.build  2.1.3
 
 首先，连接手机并编译宿主工程
