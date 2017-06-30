@@ -97,3 +97,22 @@ Cursor bookCursor = getContentResolver().query(bookUri,
 String pkg = "com.didi.virtualapk.demo";
 PluginUtil.hookActivityResources(MainActivity.this, pkg);
 ```
+#### so文件的加载
+为了提升性能，VirtualAPK在加载一个插件时并不会主动去释放插件中的so，除非你在插件apk的manifest中显式地指定```VA_IS_HAVE_LIB```为true，如下所示：
+```
+<application
+    android:name=".VAApplication"
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:supportsRtl="true"
+    android:theme="@style/HostTheme">
+
+    <meta-data
+        android:name="VA_IS_HAVE_LIB"
+        android:value="true" />
+
+    ...
+    
+</application>
+```
