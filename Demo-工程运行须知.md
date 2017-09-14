@@ -8,13 +8,13 @@ com.android.tools.build  2.1.3
 首先，连接手机并编译宿主工程
 ```
 cd VirtualAPK
-gradle clean iR
+./gradlew clean iR
 ```
 
 然后构建插件并将插件推送到手机sd卡的根目录
 ```
 cd PluginDemo
-gradle clean assemblePlugin
+./gradlew clean assemblePlugin
 adb push app/build/outputs/apk/app-beijing-release-unsigned.apk /sdcard/Test.apk
 ```
 当然，为了方便，也可以直接执行```./make.sh```来完成这整个过程。
