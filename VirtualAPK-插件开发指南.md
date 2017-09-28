@@ -25,6 +25,7 @@ compile 'com.didi.foundation:sdk:1.2.0'
 1. 暂不支持Activity的一些不常用特性（比如process、configChanges等属性），但是支持theme、launchMode和screenOrientation属性；
 2. overridePendingTransition(int enterAnim, int exitAnim)这种形式的转场动画，动画资源不能使用插件的（可以使用宿主或系统的）；
 3. 插件中弹通知，需要统一处理，走宿主的逻辑，通知中的资源文件不能使用插件的（可以使用宿主或系统的）。
+4. 插件的Activity中不支持动态申请权限。
 
 ## 插件中四大组件的已知约束
 #### Activity，支持LaunchMode和theme
