@@ -1,5 +1,16 @@
 在这之前，请确保Gradle和adb命令都在环境变量中。
 
+构建环境：
+```
+windows下请更新dev分支代码
+```
+
+依赖：
+```
+1、如果有使用nativeActivity需要的用户请更新使用fix_native_activity
+2、近期有开发者反馈在插件的Fragment中无法启动Activity我们第一时间做了修复，请使用dev分支的CoreLibrary或者依赖core-0.9.1-dev-beta.aar
+```
+
 构建环境建议：
 ```
 Gradle                   2.14.1
