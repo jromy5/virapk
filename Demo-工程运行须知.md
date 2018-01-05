@@ -9,6 +9,7 @@ windows下请更新dev分支代码
 ```
 1、如果有使用nativeActivity需要的用户请更新使用fix_native_activity分支并修改依赖为CoreLibrary
 2、近期有开发者反馈在插件的Fragment中无法启动Activity我们第一时间做了修复，请使用dev分支的CoreLibrary或者依赖core-0.9.1-dev-beta.aar
+3、在开发插件工程时可能会依赖多个第三方库，请注意保持他们所依赖的v7版本要和插件框架中的一致。
 ```
 
 构建环境建议：
