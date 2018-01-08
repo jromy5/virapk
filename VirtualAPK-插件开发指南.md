@@ -116,6 +116,5 @@ PluginUtil.hookActivityResources(MainActivity.this, pkg);
     ...
     
 </application>
-
-为了通用性，在armeabi路径下放置对应的so文件即可满足需求。如果考虑性能请做好各种so文件的适配。
 ```
+为了通用性，在armeabi路径下放置对应的so文件即可满足需求。如果考虑性能请做好各种so文件的适配。
