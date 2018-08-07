@@ -1,3 +1,11 @@
+**请尽快更新至 [最新版本](https://github.com/didi/VirtualAPK/releases) ，老版本将不再维护。**
+
+在 dev 分支持续开发尝鲜版，包含新特性并修复部分遗留bug，请关注并试用。
+
+官方交流QQ群：656602897。**提问前请先查阅右侧导航中的相关文章，大多数常见问题都可直接找到解决方案**。
+
+如果你们的产品采用了VirtualAPK，请告知我们。
+
 ## 如何开发插件？
 在VirtualAPK中，插件开发等同于原生Android开发，因此开发插件就和开发APP一样。
 
@@ -6,7 +14,7 @@
 比如，宿主工程中compile了如下aar：
 ```
 compile 'com.didi.foundation:sdk:1.2.0'
-compile 'com.didi.virtualapk:core:0.9.0'
+compile 'com.didi.virtualapk:core:[newest version]'
 compile 'com.android.support:appcompat-v7:22.2.0'
 ```
 但是插件工程需要访问宿主sdk中的类和资源，那么可以在插件工程中同样compile sdk的aar，如下：
@@ -43,19 +51,19 @@ compile 'com.didi.foundation:sdk:1.2.0'
 
 VirtualAPK对Intent的处理遵循Android规范，插件之间乃至插件和宿主之间，包名是区分它们的唯一标识。
 
-在下面的例子中，假如宿主的包名是"com.didi.virtualapk"，然后在插件中启动一个宿主Activity，下面分别是错误和正确的示范：
+为了兼容宿主与插件之间的activity互调的场景，我们弱化了插件的包名，在插件中通过context.getPackageName()取到的仍然是宿主的包名。因此在下面的例子中，假如宿主的包名是"com.didi.virtualapk"，然后在插件中启动一个宿主Activity，仍然可正确的调用：
 ```
-// 错误的用法，因为此时intent中的包名是插件的包名
+// 兼容方式
 Intent intent = new Intent(this, HostActivity.class);
 startActivity(intent);
  
-// 正确的用法
+// 显式指定包名的方式
 Intent intent = new Intent();
 intent.setClassName("com.didi.virtualapk", "com.didi.virtualapk.HostActivity");
 startActivity(intent);
 ```
 
-但是，如果想在插件中去访问插件的四大组件，那么就没有任何要求了，下面的代码会在插件Activity中尝试启动另一个插件Activity：
+如果想在插件中去访问插件的四大组件，那么就没有任何要求了，下面的代码会在插件Activity中尝试启动另一个插件Activity：
 ```
 // 正确的用法，因为此时intent中的包名是插件的包名
 Intent intent = new Intent(this, PluginActivity.class);
