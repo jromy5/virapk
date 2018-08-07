@@ -1,10 +1,17 @@
+**请尽快更新至 [最新版本](https://github.com/didi/VirtualAPK/releases) ，老版本将不再维护。**
+
+在 dev 分支持续开发尝鲜版，包含新特性并修复部分遗留bug，请关注并试用。
+
+官方交流QQ群：656602897。**提问前请先查阅右侧导航中的相关文章，大多数常见问题都可直接找到解决方案**。
+
+如果你们的产品采用了VirtualAPK，请告知我们。
+
+
 在这之前，请确保Gradle和adb命令都在环境变量中。
 
-依赖：
+一些注意事项：
 ```
-1、如果有使用nativeActivity需要的用户请更新使用fix_native_activity分支并修改依赖为CoreLibrary
-2、近期有开发者反馈在插件的Fragment中无法启动Activity我们第一时间做了修复，请使用dev分支的CoreLibrary或者依赖core-0.9.1-dev-beta.aar或更高版本。
-3、在开发插件工程时可能会依赖多个第三方库，请注意保持他们所依赖的v7版本要和插件框架中的一致。
+1、如果有使用nativeActivity需要的用户请更新使用fix_native_activity分支并修改依赖为CoreLibrary，未来会合入主线。
 ```
 
 ## 构建环境建议直接使用Demo中的配置，**插件构建强依赖构建环境，请不要轻易尝试修改**。
